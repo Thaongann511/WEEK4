@@ -1,25 +1,24 @@
 #include <iostream>
 using namespace std;
-void swap(int *x,int *y)
-{
-    int t;
-     t   = *x;
-    *x   = *y;
-    *y   =  t;
+
+void input_array(int array[], int length){
+    for (short i = 0; i < length; i++) cin >> array[i];
 }
- 
-int main()
-{
-    int num1,num2;
- 
-    cout<<"Nhap vao so thu nhat: ";
-    cin>>num1;
-    cout<<"Nhap vao so thu hai: ";
-    cin>>num2;
-   
-    cout<<"Truoc khi doi: \n"<<"So thu nhat = " <<num1<<"\nSo thu hai = "<<num2;
- n 
-    swap(&num1,&num2);
- 
-    cout<<"\nSau khi doi: \n"<<"So thu nhat = " <<num2<<"\nSo thu hai = "<<num1;
+
+void show_array(int array[], int length){
+    for(short i = 0; i < length; i++)  cout << array[i]<<' ';  
+    cout << endl;
 }
+
+int main(){
+    int n;
+    cout << "Nhap so phan tu: ";
+    cin >> n;
+ 
+    int array[n-1];
+    cout << "Nhap phan tu:\n";
+    input_array(array, n);
+    cout << "Mang vua nhap:\n"; 
+    show_array(array, n);
+}
+

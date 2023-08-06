@@ -1,22 +1,18 @@
 #include <iostream>
-#include <string>
+#include<string.h>
 using namespace std;
- 
-bool doixung(string s)
-{
-    for (int i=0; i<=s.length()/2; i++)
-        if (s[i]!=s[s.length()-i-1])
-            return 0;
-    return 1;
-}
- 
 int main()
 {
-    string s;
-    getline(cin,s); 
-    if (doixung(s))
-        cout << "La xau doi xung";
-    else
-        cout << "ko la xau doi xung";
-    return 0;
+   char s[25];
+	printf("nhap chuoi: ");
+	gets(s);
+	strupr(s);
+	for(int i=0;i<strlen(s);i++) {
+		if(i%2!=0&&s[i]!=' ') {
+			s[i]=s[i]+32;
+		}
+	}
+	printf("\n Ket qua la: ");
+	puts(s);
 }
+

@@ -1,38 +1,22 @@
+#include<string>
 #include<iostream>
 using namespace std;
+
+string DaoNguoc(string s) {
+    int length = s.length();
+    string temp;
+    for (int i = length-1; i >=0; i--) {
+        temp.push_back(s[i]);
+    }
+    return temp;
+}
+
 int main()
 {
-  int n;
-  do
-  {
-    cout<<"\nNhap vao day so: ";
-    cin>>n;
-    if (n <= 0)
-    {
-      cout<<"\nSo n phai >= 0, vui long nhap lai! ";
-    }
-  } while (n <= 0);
-  bool CheckTangDan = true;
-  int themang = n;
-  int ChuSoCuoi = themang % 10;
-  themang /= 10;
-  while(themang != 0)
-  {
-    int ChuSoKeCuoi = themang % 10;
-    themang /= 10;
-    if (ChuSoCuoi < ChuSoKeCuoi)
-    {
-      CheckTangDan = false;
-      break;
-    }
-    else
-    {
-      ChuSoCuoi = ChuSoKeCuoi;
-    }
-  }
-  if(CheckTangDan)
-    cout<<"\nDung !";
-  else
-    cout<<"Sai !";
- 
+    string s;
+    cin.clear();
+    getline(std::cin, s);
+    cout << "Chuoi sau khi dao nguoc la: ";
+    cout << DaoNguoc(s);
+    return 0;
 }
